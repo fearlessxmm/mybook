@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/www/css/style.css">
+    <link rel="stylesheet" href="/www/layui/css/layui.css">
+    <script type="text/javascript" src="/www/js/jquery.js"></script>
+    <script type="text/javascript" src="/www/layer/layer.js"></script>
+    <script type="text/javascript" src="/www/layui/layui.js"></script>
+    <script type="text/javascript" src="/www/js/template-web.js"></script>
+    <script type="text/javascript" src="/www/js/book.js"></script>
+    <script type="text/template" id="indexTpl"><!-- 模板引擎 -->
+        {{each list}}
+            <tr>
+                <td>{{$value.ISBN}}</td>
+                <td>{{$value.bookName}}</td>
+                <td>{{$value.bookAuthor}}</td>
+                <td>{{$value.sortId}}</td>
+                <td>{{$value.bookMain}}</td>
+                <td>{{$value.bookPrice}}</td>
+                <td>{{$value.bookState}}</td>
+                <td>{{$value.pubishDate}}</td>
+                <td>{{$value.addDate}}</td>
+                <td><button class="layui-btn layui-btn-radius">
+                        <i class="layui-icon">&#xe642;</i>
+                      </button><button class="layui-btn layui-btn-radius">
+                        <i class="layui-icon">&#xe640;</i>
+                      </button></td><!-- 参数：告诉服务器去修改哪条数据 -->
+            </tr>
+        {{/each}}
+    </script>
+    <title>图书信息</title>
+</head>
+<body>
+    <div class="title layui-bg-green">图书管理系统&nbsp;&nbsp;&nbsp;&nbsp;<button class="layui-btn" id="addBookId">
+            <i class="layui-icon">&#xe608;</i> &nbsp;&nbsp;添加图书类别
+        </button></div>
+    <div class="content">
+        <table cellpadding="0" cellsapcing="0" class="layui-table">
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>名称</th>
+                    <th>作者</th>
+                    <th>分类</th>
+                    <th>描述</th>
+                    <th>单价</th>
+                    <th>图书状态</th>
+                    <th>出版日期</th>
+                    <th>添加日期</th>
+                    <th>操作</th>
+                </tr>
+            </thead>           
+            <tbody id="dataList"> <!-- 模板渲染之后填充到这里 -->
+                <!-- {{each list}}
+                    <tr>
+                        <td>{{$value.id}}</td>
+                        <td>{{$value.name}}</td>
+                        <td>{{$value.author}}</td>
+                        <td>{{$value.category}}</td>
+                        <td>{{$value.description}}</td>
+                        <td><a href="/toEditBook?id={{$value.id}}">修改</a>|<a href="/deleteBook?id={{$value.id}}">删除</a></td>参数：告诉服务器去修改哪条数据
+                    </tr>
+                {{/each}} -->
+                 <!-- <tr>
+                    <td>1</td>
+                    <td>三国演义</td>
+                    <td>吴承恩</td>
+                    <td>文学</td>
+                    <td>描述</td>
+                    <td><a href="#">修改</a>|<a href="#">删除</a></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>三国演义</td>
+                    <td>吴承恩</td>
+                    <td>文学</td>
+                    <td>描述</td>
+                    <td><a href="#">修改</a>|<a href="#">删除</a></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>三国演义</td>
+                    <td>吴承恩</td>
+                    <td>文学</td>
+                    <td>描述</td>
+                    <td><a href="#">修改</a>|<a href="#">删除</a></td>
+                </tr>  -->
+            </tbody>
+        </table>
+    </div>
+    <form class="form" id="addBookForm" style="text-align: center;">
+        <!-- <input type="hidden" name="ISBN"> --><!-- 编辑图书提交表单时，隐藏域传递id给后台，后台可以根据id做相关操作 -->
+        ISBN：<input type="text" name="ISBN"><br>
+        名称：<input type="text" name="bookName"><br>
+        作者：<input type="text" name="bookAuthor"><br>
+        分类：<input type="text" name="sortId"><br>
+        描述：<input type="text" name="bookMain"><br>
+        单价：<input type="text" name="bookPrice"><br>
+        图书状态：<input type="text" name="bookState" disabled="true"><br>
+        出版日期：<input type="text" name="pubishDate"><br>
+        添加日期：<input type="text" name="addDate"><br>
+        <input type="button" value="确认" class="layui-btn  layui-btn-radius" style="margin-top:20px;">
+    </form>
+</body>
+</html>

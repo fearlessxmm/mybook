@@ -1,0 +1,50 @@
+.title{
+    background-color: lightgreen;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size:24px;
+}
+.content{
+    background-color:lightblue;
+}
+.content table{
+    width:100%;
+    border-bottom: 1px solid orange;
+    border-right: 1px solid orange;
+}
+.content .layui-table th{
+    text-align: center;  
+}
+.content td,th{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-left: 1px solid orange;
+    border-top: 1px solid orange;
+}
+
+.form{
+    width:300px;
+    margin:0 auto;
+    display:none;
+    position: absolute;
+    left:50%;
+    top:60px;
+    margin-left: -150px;
+}
+.form input[type="text"]{
+    height:20px;
+    line-height: 20px;
+    margin:5px;
+    padding-left:5px;
+    border-radius: 4px;
+    border:1px solid #f2f2f2;
+}
+b{
+    display: none;
+}
+.form p{
+    height: 35px;
+    line-height: 35px;
+}

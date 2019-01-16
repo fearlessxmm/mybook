@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="Stylesheet" type="text/css" href="/www/css/css.css" />
+    <link rel="stylesheet" href="/www/layui/css/layui.css">
+    <script type="text/javascript" src="/www/js/jquery.js"></script>
+    <script type="text/javascript" src="/www/layui/layui.js"></script>
+    <title>Document</title>
+</head>
+<script>
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function () {
+            var element = layui.element;
+
+            //…
+        });
+
+    $(document).ready(function () {
+        $('#content').load('book.html');
+        $('#accordion').find('a:eq(1)').click(function () {
+            console.log(1111);
+            // 点击图书管理，右边显示图书管理界面
+            $('#content').load('book.html');
+        })
+        $('#accordion').find('a:eq(2)').click(function () {
+            console.log(222);
+            // 点击图书类别，右边显示图书类别界面
+            $('#content').load('booksorts.html');
+        })
+        $('#accordion').find('a:eq(4)').click(function () {
+            console.log(444);
+            // 点击学生信息，右边显示学生信息界面
+            $.ajax({
+                type: 'get',
+                url: '/books',
+                dataType: 'json',
+                success: function (data) {
+                    //console.log('vvvv');
+                    $('#content').load('usermanage.html');
+                }
+            })
+        })
+        $('#accordion').find('a:eq(5)').click(function () {
+            console.log(555);
+            // 点击管理员信息，右边显示管理员信息界面
+            $('#content').load('admin.html');
+        })
+        $('#accordion').find('a:eq(7)').click(function () {
+            console.log(666);
+            $('#content').load('borrow.html');
+        })
+        // 注销
+        $('#logout').click(function(){
+            console.log("点击")
+             $.ajax({
+                type: 'get',
+                url: '/logout',
+                dataType: 'json',
+                success: function (data) {
+                    if(data.flag == 1){
+                        console.log(data);
+                        console.log("成功注销")
+                        window.location.href = "http://localhost:3000/www/welcome.html";
+                    }
+
+                }
+            })
+        })
+    });
+</script>
+
+<body>
+    <div class="main">
+        <ul class="layui-nav layui-nav-tree layui-bg-cyan" lay-filter="test" id="accordion">
+                <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">图书管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">图书信息</a></dd>
+                        <dd><a href="javascript:;">图书类别</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">人员管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">学生信息</a></dd>
+                        <dd><a href="javascript:;">管理员信息</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">借书管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">借阅信息</a></dd>
+                    </dl>
+                </li>
+                <input type="button" value="注销" id="logout" class="layui-btn layui-btn-radius layui-btn-primary">
+            </ul>
+        <div id="content">
+
+        </div>
+    </div>
+
+</body>
+
+</html>

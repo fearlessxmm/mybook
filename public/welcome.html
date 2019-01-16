@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="/www/js/jquery.js"></script>
+    <script type="text/javascript" src="/www/js/index-login.js"></script>
+    <title>登录首页</title>
+    <style>
+        body {
+            background: #2F4056;
+            position: relative;
+        }
+        .main {
+            width: 400px;
+            margin: 10% auto;
+        }
+        .img1{
+            position: absolute;
+            left:100px;
+        }
+        .img2{
+            position: absolute;
+            right:60px;
+            top:15px;
+        }
+        #campus-home-btn-group {
+            padding: 20px;
+            margin: 0 auto;
+            width: 15em;
+            height: 10em;
+            line-height: 10em;
+            font-size: 17px;
+            text-align: center;
+        }
+
+        #campus-home-btn-group a {
+            color: rgba(255, 255, 255, 0.8);
+            color: #fff \9;
+            display: inline-block;
+            width: 100%;
+            line-height: 4em;
+            height: 4em;
+            border: 2px solid rgba(255, 255, 255, 0.33);
+            margin: .44em 0 .44em -2px;
+            position: relative;
+        }
+
+        #campus-home-btn-group a em {
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            display: block;
+            width: 100%;
+            height: 4em;
+            overflow: hidden;
+            border: 2px solid #fff;
+            opacity: 0;
+        }
+
+        #campus-home-btn-group a:hover em {
+            opacity: .2;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #campus-home-btn-group a span{
+            font-size: 15px;
+        }
+        @-webkit-keyframes 'cbtnem1' {
+            0% {
+                -webkit-transform: scale(1, 1);
+                -webkit-transform-origin: 40% 40%
+            }
+
+            50% {
+                -webkit-transform: scale(1.12, 1.4);
+                -webkit-transform-origin: 40% 40%
+            }
+
+            100% {
+                -webkit-transform: scale(1, 1);
+                -webkit-transform-origin: 40% 40%
+            }
+        }
+
+        @-webkit-keyframes 'cbtnem2' {
+            0% {
+                -webkit-transform: scale(1, 1);
+                -webkit-transform-origin: 40% 60%
+            }
+
+            50% {
+                -webkit-transform: scale(1.12, 1.4);
+                -webkit-transform-origin: 40% 60%
+            }
+
+            100% {
+                -webkit-transform: scale(1, 1);
+                -webkit-transform-origin: 40% 60%
+            }
+        }
+
+        @-webkit-keyframes 'cbtnem3' {
+            0% {
+                -webkit-transform: scale(1, 1);
+                -webkit-transform-origin: 60% 60%
+            }
+
+            50% {
+                -webkit-transform: scale(1.12, 1.4);
+                -webkit-transform-origin: 60% 60%
+            }
+
+            100% {
+                -webkit-transform: scale(1, 1);
+                -webkit-transform-origin: 60% 60%
+            }
+        }
+
+        @-webkit-keyframes 'cbtnem4' {
+            0% {
+                -webkit-transform: scale(1, 1);
+                -webkit-transform-origin: 60% 40%
+            }
+
+            50% {
+                -webkit-transform: scale(1.12, 1.4);
+                -webkit-transform-origin: 60% 40%
+            }
+
+            100% {
+                -webkit-transform: scale(1, 1);
+                -webkit-transform-origin: 60% 40%
+            }
+        }
+
+        #campus-home-btn-group a:hover em.em_1 {
+            -webkit-animation: 'cbtnem1'.5s linear;
+        }
+
+        #campus-home-btn-group a:hover em.em_2 {
+            -webkit-animation: 'cbtnem2'.75s linear;
+        }
+
+        #campus-home-btn-group a:hover em.em_3 {
+            -webkit-animation: 'cbtnem3'1s linear;
+        }
+
+        #campus-home-btn-group a:hover em.em_4 {
+            -webkit-animation: 'cbtnem4'1.25s linear;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <!-- <img src="img/rabbit.png" alt="rabbit" class="img1"> -->
+        <div id="campus-home-btn-group" style="font-size: 9.60234px; margin-top: 2.82422px;">
+            <div class="btn-group-inner">
+                <a href="javascript:;" id="stu">
+                    <span>我是学生</span>
+                    <em class="em_1"></em>
+                    <em class="em_2"></em>
+                </a>
+                <a href="javascript:;" id="admin">
+                    <span>我是管理员</span>
+                    <em class="em_1"></em>
+                    <em class="em_2"></em>
+                </a>
+            </div>
+        </div>
+        <!-- <img src="img/people.png" alt="people" class="img2"> -->
+    </div>
+
+</body>
+
+</html>

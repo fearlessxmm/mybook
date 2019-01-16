@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/www/css/style.css">
+    <link rel="stylesheet" href="/www/layui/css/layui.css">
+    <script type="text/javascript" src="/www/js/jquery.js"></script>
+    <script type="text/javascript" src="/www/layer/layer.js"></script>
+    <script type="text/javascript" src="/www/layui/layui.js"></script>
+    <script type="text/javascript" src="/www/js/template-web.js"></script>
+    <script type="text/javascript" src="/www/js/booksorts.js"></script>
+    <script type="text/template" id="indexTpl"><!-- 模板引擎 -->
+        {{each list}}
+            <tr>
+                <!-- <td>{{$value.id}}</td> -->
+                <td>{{$value.sortId}}</td>
+                <td>{{$value.sortName}}</td>
+                <td><button class="layui-btn layui-btn-radius">
+                        <i class="layui-icon">&#xe642;</i>
+                      </button><button class="layui-btn layui-btn-radius">
+                        <i class="layui-icon">&#xe640;</i>
+                      </button></td><!-- 参数：告诉服务器去修改哪条数据 -->
+            </tr>
+        {{/each}}
+    </script>
+    <title>图书类别</title>
+</head>
+
+<body>
+    <div class="title layui-bg-green">图书类别管理
+        &nbsp;&nbsp;&nbsp;&nbsp;<button class="layui-btn" id="addSortId">
+            <i class="layui-icon">&#xe608;</i> &nbsp;&nbsp;添加图书类别
+        </button>
+    </div>
+    <div class="content">
+        <table cellpadding="0" cellsapcing="0" class="layui-table">
+            <thead>
+                <tr>
+                    <!-- <th>编号</th> -->
+                    <th>类别编码</th>
+                    <th>类别名称</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="dataList">
+                <!-- 模板渲染之后填充到这里 -->
+            </tbody>
+        </table>
+    </div>
+    <form class="form" id="addSortForm" style="text-align: center;">
+        <input type="hidden" name="id"><!-- 编辑图书提交表单时，隐藏域传递id给后台，后台可以根据id做相关操作 -->
+        类别编码：<input type="text" name="sortId"><br>
+        类别名称：<input type="text" name="sortName"><br>
+        <input type="button" value="确认" class="layui-btn  layui-btn-radius" style="margin-top:20px;">
+    </form>
+</body>
+
+</html>
