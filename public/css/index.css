@@ -1,19 +1,21 @@
-body{
+body {
     margin: 0;
     padding: 0;
-	overflow:hidden;
+    overflow: hidden;
 }
-img.background{
-	position:absolute;
-	width:100%;
-	height:100%;
-	
+
+img.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
 }
-div{
+
+div {
     width: 400px;
-    position:absolute;
-    left:50%;
-    top:50%; 
-    margin-left:-200px;
-    text-align: center;   
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    text-align: center;
 }

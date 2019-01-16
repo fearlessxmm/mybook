@@ -5,29 +5,22 @@ $(function () {
             url: '/booksorts',
             dataType: 'json',
             success: function (data) {
-                //console.log(data);
                 // 拿到数据之后渲染模板
                 var html = template('indexTpl', {
                     list: data
                 });
                 // 填充数据给表格
                 $("#dataList").html(html);
-
                 // 必须在渲染完成之后才能操作列表里的标签(修改删除的按钮操作)
-                $("#dataList").find('tr').each(function (index, element) { // 一个element就是一个tr,是DOM对象，要转成jq对象
-                    // 找td
+                $("#dataList").find('tr').each(function (index, element) {
                     var td = $(element).find('td:eq(2)');
-                    // 当前路径下的id
-                    var sortId = $(element).find('td:eq(0)').text(); // 也就是表格第一列的编号
-                    // 找td里的a标签
+                    var sortId = $(element).find('td:eq(0)').text();
                     // 绑定编辑图书的单击事件
                     td.find('button:eq(0)').click(function () {
-                        //console.log(1);
                         editSort(sortId);
                     })
                     // 绑定删除图书的单击事件
                     td.find('button:eq(1)').click(function () {
-                        //console.log(2);
                         deleteSort(sortId);
                     })
 
@@ -67,11 +60,6 @@ $(function () {
             url: '/booksorts/sort/' + sortId,
             dataType: 'json', // 响应的内容
             success: function (data) {
-                // console.log(data);//  打印当前id对象的内容
-                // 初始化弹窗
-                /* var mark = new MarkBox(600, 400, '编辑图书类别', form.get(0));
-                mark.init(); */
-
                 // 填充表单数据
                 //form.find('input[name=id]').val(data.sortId);
                 form.find('input[name=sortId]').val(data.sortId);
@@ -99,7 +87,6 @@ $(function () {
                                 dataType: 'json',
                                 success: function (data) {
                                     if (data.flag == 1) {
-                                        //console.log(1);
                                         // 关闭弹窗                                        
                                         layer.closeAll();
                                         // 重新渲染数据列表
@@ -122,9 +109,6 @@ $(function () {
             console.log(e.currentTarget);
             console.log('请求添加');
             var form = $('#addSortForm');
-            // 实例化弹窗对象
-            /* var mark = new MarkBox(600, 400, '添加图书类别', form.get(0));
-            mark.init(); */
             //页面层
             layer.open({
                 type: 1,
@@ -146,7 +130,6 @@ $(function () {
                             dataType: 'json', // 返回的数据类型
                             success: function (data) {
                                 console.log(data);
-                                // 因为获得的data是标志位
                                 if (data.flag == 1) {
                                     // 关闭弹窗                                        
                                     layer.closeAll();

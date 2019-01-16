@@ -1,17 +1,4 @@
 $(function () {
-    /*   // 主登录页面
-      $.ajax({
-          type: 'get',
-          url: '/',
-          dataType: 'json', // 响应的内容
-          success: function (data) {
-              alert(data);
-              if (data.flag == 1) {
-                  console.log("我是测试"+data);
-                  //window.location.href = "http://localhost:3000/www/welcome.html";
-              }
-          }
-      }) */
     // 登录首页 角色选择
     $("#stu").click(function () {
         console.log(456);
@@ -25,7 +12,6 @@ $(function () {
     // -----------------login_admin---------------------------------------   
     var formLogin_admin = $('#formLogin_admin');
     $("#btn").click(function () {
-        console.log(789);
         var warnForm_login_admin = $('#warnForm_login_admin');
         $.ajax({
             url: '/loginAdmin',
@@ -36,12 +22,9 @@ $(function () {
             dataType: 'json',
             success: function (data) {
                 if (data.flag == 1) {
-                    console.log(data.user);
+                    //console.log(data.user);
                     window.location.href = "http://localhost:3000/www/include.html";
                 } else if (data.flag == 4) {
-                    // 初始化弹窗
-                    /* var mark = new MarkBox(600, 400, '提示框', warnForm_login_admin.get(0));
-                    mark.init(); */
                     // 填充表单数据
                     console.log(data);
                     warnForm_login_admin.find('p:eq(0)').html(data.warn);
@@ -59,8 +42,6 @@ $(function () {
                             //其中：layero是弹层的DOM对象
                             // 对表单提交按钮重新绑定单击事件
                             $("#btn1").unbind('click').click(function (e) {
-                                console.log(e.currentTarget);
-                                console.log('請求4');
                                 // 点击确认按钮回到登录页
                                 // 关闭弹窗                                        
                                 layer.closeAll();
@@ -80,8 +61,6 @@ $(function () {
         $.ajax({
             url: '/loginStu',
             type: 'POST',
-            //data:data,
-            //dataType:'json',
             data: formlogin.serialize(),
             dataType: 'json',
             success: function (data) {
@@ -90,10 +69,6 @@ $(function () {
                     console.log(data.user);
                     window.location.href = "http://localhost:3000/www/include_stu.html";
                 } else {
-                    // 初始化弹窗
-                    /* var mark = new MarkBox(600, 400, '提示框', warnform_login.get(0));
-                    mark.init(); */
-
                     if (data.flag == 4) {
                         // 填充表单数据
                         console.log(data);
@@ -121,7 +96,6 @@ $(function () {
                                 })
                             }
                         })
-                        //window.location.href = "http://localhost:3000/www/login-failure.html";
                     } else if (data.flag == 5) {
                         // 填充表单数据
                         console.log(data);
@@ -177,12 +151,7 @@ $(function () {
             data: formregister.serialize(),
             dataType: 'json', // 响应的内容
             success: function (data) {
-                // 初始化弹窗
-                /* var mark = new MarkBox(600, 400, '提示框', warnform.get(0));
-                mark.init(); */
-
                 if (data.flag == 1) {
-                    // console.log(data);//  打印当前id对象的内容                 
                     // 填充表单数据
                     console.log(data);
                     warnform.find('p:eq(0)').html(data.warn);

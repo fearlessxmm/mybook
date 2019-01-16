@@ -15,16 +15,15 @@
     <script type="text/template" id="indexTpl"><!-- 模板引擎 -->
         {{each list}}
             <tr>
-                    <td>{{$value.ISBN}}</td>
-                    <td>{{$value.bookName}}</td>
-                    <td>{{$value.bookAuthor}}</td>
-                    <td>{{$value.sortId}}</td>
-                    <td>{{$value.bookMain}}</td>
-                    <td>{{$value.bookPrice}}</td>
-                    <td>{{$value.bookState}}</td>
-                    <td>{{$value.pubishDate}}</td>
-                    <td>{{$value.addDate}}</td>
-               <!--  <td><a href="javascript:;">借阅</a>|<a href="javascript:">归还</a></td> --><!-- 参数：告诉服务器去修改哪条数据 -->
+                <td>{{$value.ISBN}}</td>
+                <td>{{$value.bookName}}</td>
+                <td>{{$value.bookAuthor}}</td>
+                <td>{{$value.sortId}}</td>
+                <td>{{$value.bookMain}}</td>
+                <td>{{$value.bookPrice}}</td>
+                <td>{{$value.bookState}}</td>
+                <td>{{$value.pubishDate}}</td>
+                <td>{{$value.addDate}}</td>
             </tr>
         {{/each}}
     </script>

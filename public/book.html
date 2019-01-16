@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,6 +34,7 @@
     </script>
     <title>图书信息</title>
 </head>
+
 <body>
     <div class="title layui-bg-green">图书管理系统&nbsp;&nbsp;&nbsp;&nbsp;<button class="layui-btn" id="addBookId">
             <i class="layui-icon">&#xe608;</i> &nbsp;&nbsp;添加图书类别
@@ -52,8 +54,9 @@
                     <th>添加日期</th>
                     <th>操作</th>
                 </tr>
-            </thead>           
-            <tbody id="dataList"> <!-- 模板渲染之后填充到这里 -->
+            </thead>
+            <tbody id="dataList">
+                <!-- 模板渲染之后填充到这里 -->
                 <!-- {{each list}}
                     <tr>
                         <td>{{$value.id}}</td>
@@ -64,7 +67,7 @@
                         <td><a href="/toEditBook?id={{$value.id}}">修改</a>|<a href="/deleteBook?id={{$value.id}}">删除</a></td>参数：告诉服务器去修改哪条数据
                     </tr>
                 {{/each}} -->
-                 <!-- <tr>
+                <!-- <tr>
                     <td>1</td>
                     <td>三国演义</td>
                     <td>吴承恩</td>
@@ -92,7 +95,8 @@
         </table>
     </div>
     <form class="form" id="addBookForm" style="text-align: center;">
-        <!-- <input type="hidden" name="ISBN"> --><!-- 编辑图书提交表单时，隐藏域传递id给后台，后台可以根据id做相关操作 -->
+        <!-- <input type="hidden" name="ISBN"> -->
+        <!-- 编辑图书提交表单时，隐藏域传递id给后台，后台可以根据id做相关操作 -->
         ISBN：<input type="text" name="ISBN"><br>
         名称：<input type="text" name="bookName"><br>
         作者：<input type="text" name="bookAuthor"><br>
@@ -105,4 +109,5 @@
         <input type="button" value="确认" class="layui-btn  layui-btn-radius" style="margin-top:20px;">
     </form>
 </body>
+
 </html>

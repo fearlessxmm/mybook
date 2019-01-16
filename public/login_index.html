@@ -1,49 +1,52 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-<title>Login</title>
-<!-- Custom Theme files -->
-<link rel="stylesheet" href="/www/css/style.css"> 
-<link rel="stylesheet" href="/www/layui/css/layui.css">
-<link href="/www/css/login.css" rel="stylesheet" type="text/css" media="all"/>
+	<title>Login</title>
+	<!-- Custom Theme files -->
+	<link rel="stylesheet" href="/www/css/style.css">
+	<link rel="stylesheet" href="/www/layui/css/layui.css">
+	<link href="/www/css/login.css" rel="stylesheet" type="text/css" media="all" />
 
-<!-- Custom Theme files -->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<!-- Custom Theme files -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<!--Google Fonts-->
-<script type="text/javascript" src="/www/js/jquery.js"></script>
-<script type="text/javascript" src="/www/layer/layer.js"></script>
-<script type="text/javascript" src="/www/layui/layui.js"></script>
-<script type="text/javascript" src="/www/js/index-login.js"></script>
+	<!--Google Fonts-->
+	<script type="text/javascript" src="/www/js/jquery.js"></script>
+	<script type="text/javascript" src="/www/layer/layer.js"></script>
+	<script type="text/javascript" src="/www/layui/layui.js"></script>
+	<script type="text/javascript" src="/www/js/index-login.js"></script>
 </head>
+
 <body>
-<div class="login">
-	<h2>Admin Login</h2>
-	<div class="login-top">
-		<h1>LOGIN FORM</h1>
-		<form id="formLogin_admin">
-			<input type="text" name="managerName" value="managerName" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'UserName';}">
-			<input type="password" name="managerPassword" value="managerPassword" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}">
-	    </form>
-	    <div class="forgot">
-	    	<a href="#">forgot Password</a>
-	    	<input type="button" value="登录" id="btn">
-	    </div>
-	</div>
-	<div class="login-bottom">
-		<h3>New User &nbsp;<a href="#">Register</a>&nbsp Here</h3>
-	</div>
-	<form class="form" id="warnForm_login_admin" style="text-align: center;">
+	<div class="login">
+		<h2>Admin Login</h2>
+		<div class="login-top">
+			<h1>LOGIN FORM</h1>
+			<form id="formLogin_admin">
+				<input type="text" name="managerName" value="managerName" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'UserName';}">
+				<input type="password" name="managerPassword" value="managerPassword" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}">
+			</form>
+			<div class="forgot">
+				<a href="#">forgot Password</a>
+				<input type="button" value="登录" id="btn">
+			</div>
+		</div>
+		<div class="login-bottom">
+			<h3>New User &nbsp;<a href="#">Register</a>&nbsp Here</h3>
+		</div>
+		<form class="form" id="warnForm_login_admin" style="text-align: center;">
 			<div>
 				<p>warn</p>
 				<p>choice</p>
 			</div>
 			<input type="button" value="确认" id="btn1" class="layui-btn layui-btn-radius" style="margin-top:20px;background: #2F4056;">
-	</form>
-</div>	
+		</form>
+	</div>
 
 
 </body>
+
 </html>

@@ -55,12 +55,7 @@ exports.loginStu = (req, res) => {
 
     db.base(sql, data, (result) => {
         if (result[0].total == 1) {
-            //res.send('login success123');
-            //res.redirect('/books');
-            //req.session.user = result[0];
             req.session.user = param; //  问题：怎样把user给学生查询那里？
-            console.log(1);
-            //res.sendStatus(200);
             res.json({
                 flag: 1,
                 user: req.session.user
@@ -88,8 +83,6 @@ exports.loginStu = (req, res) => {
                     });
                 }
             })
-            //res.sendStatus( 404 );
-            //res.json({flag:2});              
         }
     })
 }
@@ -139,13 +132,6 @@ exports.register = (req, res) => {
                     });
                 }
             })
-            /* req.session.error = "新用户，要注册";
-            console.log(req.session.error);
-            res.json({
-                flag: 5,
-                warn:"新用户，要注册",
-                choice:"点击确认进入注册页"
-            }); */
         }
     })
 }
@@ -153,26 +139,6 @@ exports.register = (req, res) => {
 // ---------------------------------------图书管理--------------------------------------------
 // 跳转到主页面
 exports.allBooks = (req, res) => {
-    /*  if (req.session.user) {
-         console.log(req.session.user);
-         //res.render('home');
-         let sql = 'select * from book';
-         let data = null;
-         db.base(sql, data, (result) => {
-             res.json(result); // 将数据转换成json形式
-         })
-         console.log("到这里");
-     } else {
-         // 直接输入http://localhost:3000/www/index.html 不能看到渲染的列表，防止了直接输入地址看到我们的主页面
-         req.session.error = "请先登录";
-         //console.log(req.session.error);
-         console.log("也到这里");
-         res.json({
-             flag: 2
-         });
-         //res.redirect('login');
-     } */
-
     let sql = 'select * from book';
     let data = null;
     db.base(sql, data, (result) => {
@@ -195,44 +161,23 @@ exports.allBooks = (req, res) => {
                     //res.json(result1[index].ISBN)
                 }
                 for (var index in _result) {
-                    //console.log(_result[index]);
-                    //console.log(_result[index].ISBN);
-                    //console.log(index);
                     arr1.push(_result[index].ISBN)
-                    //arr2.push(_result[index].bookState)
-                    //res.json(result1[index].ISBN)
-                    
                     var c = arr.toString();
                     for (var i = 0; i < arr1.length; i++) {
                         if (c.indexOf(arr1[i].toString()) > -1) {
-                            //console.log("我是判断之后的" + arr1[i]);
                             // 找到相同的ISBN的下标与全部图书里的ISBN对比，相同的就让全部图书里的图书状态为不可借
                             if (_result[index].ISBN == arr1[i]) {
                                 //console.log(_result[index]);
                                 _result[index].bookState = "不可借";
                                 console.log(_result[index]);
                             }
-                            //console.log();
                         }
                     }
-                    
-                    if(_result[index].bookState != "不可借"){
+
+                    if (_result[index].bookState != "不可借") {
                         _result[index].bookState = "可借";
                     }
                 }
-
-                // 与sql语句的作用相同，都是找全部图书和借书表里重合的ISBN
-                /* function FilterData(a, b) { //循环判断数组a里的元素在b里面有没有，有的话就放入新建立的数组中
-                    var result = new Array();
-                    var c = b.toString();
-                    for (var i = 0; i < a.length; i++) {
-                        if (c.indexOf(a[i].toString()) > -1) {
-                            result.push(a[i]);
-                        }
-                    }
-                    return result;
-                }
-                console.log(FilterData(arr, arr1)); */
 
                 // 返回全部图书信息
                 res.json(_result);
@@ -473,7 +418,6 @@ exports.allManagers = (req, res) => {
     let sql = 'select * from manager';
     let data = null;
     db.base(sql, data, (result) => {
-        //console.log(result);
         res.json(result); // 将数据转换成json形式
     })
 }
@@ -563,7 +507,6 @@ exports.allBorrow = (req, res) => {
     let sql = 'select * from borrow';
     let data = null;
     db.base(sql, data, (result) => {
-        //console.log(result);
         res.json(result); // 将数据转换成json形式
     })
 }

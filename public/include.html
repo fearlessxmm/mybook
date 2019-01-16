@@ -15,8 +15,6 @@
     //注意：导航 依赖 element 模块，否则无法进行功能性操作
     layui.use('element', function () {
             var element = layui.element;
-
-            //…
         });
 
     $(document).ready(function () {
@@ -76,29 +74,29 @@
 <body>
     <div class="main">
         <ul class="layui-nav layui-nav-tree layui-bg-cyan" lay-filter="test" id="accordion">
-                <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
-                <li class="layui-nav-item layui-nav-itemed">
-                    <a href="javascript:;">图书管理</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">图书信息</a></dd>
-                        <dd><a href="javascript:;">图书类别</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">人员管理</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">学生信息</a></dd>
-                        <dd><a href="javascript:;">管理员信息</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">借书管理</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">借阅信息</a></dd>
-                    </dl>
-                </li>
-                <input type="button" value="注销" id="logout" class="layui-btn layui-btn-radius layui-btn-primary">
-            </ul>
+            <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+            <li class="layui-nav-item layui-nav-itemed">
+                <a href="javascript:;">图书管理</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;">图书信息</a></dd>
+                    <dd><a href="javascript:;">图书类别</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">人员管理</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;">学生信息</a></dd>
+                    <dd><a href="javascript:;">管理员信息</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">借书管理</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;">借阅信息</a></dd>
+                </dl>
+            </li>
+            <input type="button" value="注销" id="logout" class="layui-btn layui-btn-radius layui-btn-primary">
+        </ul>
         <div id="content">
 
         </div>
